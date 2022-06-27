@@ -11,6 +11,12 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   rospy
   std_msgs
+  geometry_msgs
+  sensor_msgs
+  nav_msgs
+  message_generation
+  dynamic_reconfigure
+  tf tf2 tf2_ros
 )
 
 ## System dependencies are found with CMake's conventions
@@ -149,6 +155,16 @@ include_directories(
 # target_link_libraries(${PROJECT_NAME}_node
 #   ${catkin_LIBRARIES}
 # )
+
+## tf_broadcaster
+ add_executable(tf_broadcaster src/tf_broadcaster.cpp)
+ add_dependencies(tf_broadcaster ${catkin_EXPORTED_TARGETS})
+ target_link_libraries(tf_broadcaster ${catkin_LIBRARIES})
+ 
+## laser message merger
+ add_executable(laser_merger src/LaserMerger.cpp)
+ add_dependencies(laser_merger ${catkin_EXPORTED_TARGETS})
+ target_link_libraries(laser_merger ${catkin_LIBRARIES})
 
 #############
 ## Install ##
