@@ -161,10 +161,6 @@ include_directories(
  add_dependencies(tf_broadcaster ${catkin_EXPORTED_TARGETS})
  target_link_libraries(tf_broadcaster ${catkin_LIBRARIES})
  
-## laser message merger
- add_executable(laser_merger src/LaserMerger.cpp)
- add_dependencies(laser_merger ${catkin_EXPORTED_TARGETS})
- target_link_libraries(laser_merger ${catkin_LIBRARIES})
 
 #############
 ## Install ##
