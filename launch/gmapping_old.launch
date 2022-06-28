@@ -1,5 +1,7 @@
+<!-- DESCRITPION -->
+
 <launch>
-  	<!-- laser merger node configuration -->
+	<!-- laser merger node configuration -->
 	<node pkg="ira_laser_tools" name="laserscan_multi_merger" type="laserscan_multi_merger" output="screen">
 	<param name="destination_frame" value="base_footprint"/>
 	<param name="cloud_destination_topic" value="/merged_cloud"/>
@@ -22,23 +24,10 @@
 	<node pkg="tf2_ros" type="static_transform_publisher" name="base_footprint_to_base_link" args="0 0 0 0 0 0 1 base_footprint base_link " />
 	<node pkg="tf2_ros" type="static_transform_publisher" name="base_link_to_laser_front" args="0.35 0 0 0 0 0.5150381 0.8571673 base_link laser_front  " />
 	<node pkg="tf2_ros" type="static_transform_publisher" name="base_link_to_laser_rear" args="-0.35 0 0 0 0 0.866 0.5 base_link laser_rear " />	
-  <arg name="base"       default="kobuki"/>  <!-- create, rhoomba -->
-  <arg name="stacks"     default="hexagons"/>  <!-- circles, hexagons -->
-  <arg name="3d_sensor"  default="asus_xtion_pro"/>  <!-- kinect, asus_xtion_pro -->
 
-  <!-- Name of the map to use and initial position -->
-  <arg name="world_file"     default="$(find project2)/maps/stage/maze.world"/>
-
-  <arg name="odom_frame_id"   default="odom"/>
-  <arg name="global_frame_id" default="map"/>
-
-  <param name="/use_sim_time" value="true"/>
-
-
-
-
-
-  <!--  ************** Navigation  ***************  -->
+	<param name="/use_sim_time" value="true"/>
+	
+	<!--  ************** Navigation  ***************  -->
    <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
     <rosparam file="$(find project2)/cfg/costmap_common_params.yaml" command="load" ns="global_costmap" />
     <rosparam file="$(find project2)/cfg/costmap_common_params.yaml" command="load" ns="local_costmap" />   
@@ -58,16 +47,9 @@
     <param name="clearing_rotation_allowed" value="true"/> 
   </node>
 
+ 	<!-- Gmapping -->
+  	<include file="$(find project2)/launch/gmapping.launch.xml"/>
 
-
- <!-- Gmapping -->
-  <include file="$(find project2)/launch/gmapping.launch.xml"/>
-
-
-
-
-
-  <!--  **************** Visualisation ****************  -->
-  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find project2)/rviz/gmapping.rviz"/>
+  	<!--  **************** Visualisation ****************  -->
+  	<node name="rviz" pkg="rviz" type="rviz" args="-d $(find project2)/rviz/gmapping.rviz"/>
 </launch>
-
