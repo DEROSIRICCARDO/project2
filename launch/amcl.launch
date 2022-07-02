@@ -19,7 +19,7 @@
 
 
   <!--  ************** Navigation  ***************  -->
-   <include file="$(find project2)/launch/navigation.launch"/>
+   <!--include file="$(find project2)/launch/navigation.launch"/ -->
 
 
   <!--  ****** Maps *****  -->
