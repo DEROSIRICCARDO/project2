@@ -5,8 +5,6 @@ Panels:
     Property Tree Widget:
       Expanded:
         - /Global Options1
-        - /TF1
-        - /TF1/Frames1
       Splitter Ratio: 0.5
     Tree Height: 539
   - Class: rviz/Selection
@@ -104,7 +102,7 @@ Visualization Manager:
       Invert Rainbow: false
       Max Color: 255; 255; 255
       Min Color: 0; 0; 0
-      Name: LaserScan
+      Name: complete_scan
       Position Transformer: XYZ
       Queue Size: 10
       Selectable: true
@@ -128,11 +126,11 @@ Visualization Manager:
       Color: 255; 255; 255
       Color Transformer: Intensity
       Decay Time: 0
-      Enabled: true
+      Enabled: false
       Invert Rainbow: false
       Max Color: 255; 255; 255
       Min Color: 0; 0; 0
-      Name: LaserScan
+      Name: front_scan
       Position Transformer: XYZ
       Queue Size: 10
       Selectable: true
@@ -143,7 +141,7 @@ Visualization Manager:
       Unreliable: false
       Use Fixed Frame: true
       Use rainbow: true
-      Value: true
+      Value: false
     - Alpha: 1
       Autocompute Intensity Bounds: true
       Autocompute Value Bounds:
@@ -156,11 +154,11 @@ Visualization Manager:
       Color: 255; 255; 255
       Color Transformer: Intensity
       Decay Time: 0
-      Enabled: true
+      Enabled: false
       Invert Rainbow: false
       Max Color: 255; 255; 255
       Min Color: 0; 0; 0
-      Name: LaserScan
+      Name: rear_scan
       Position Transformer: XYZ
       Queue Size: 10
       Selectable: true
@@ -171,7 +169,7 @@ Visualization Manager:
       Unreliable: false
       Use Fixed Frame: true
       Use rainbow: true
-      Value: true
+      Value: false
     - Alpha: 0.699999988079071
       Class: rviz/Map
       Color Scheme: map
@@ -188,7 +186,7 @@ Visualization Manager:
       Frames:
         All Enabled: false
         base_footprint:
-          Value: false
+          Value: true
         base_link:
           Value: false
         laser_front:
@@ -200,7 +198,7 @@ Visualization Manager:
         odom:
           Value: true
         scan:
-          Value: true
+          Value: false
         world:
           Value: false
       Marker Alpha: 1
@@ -251,7 +249,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 17.309005737304688
+      Distance: 23.0939884185791
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -259,17 +257,17 @@ Visualization Manager:
         Value: false
       Field of View: 0.7853981852531433
       Focal Point:
-        X: -0.24920473992824554
-        Y: 0.37815773487091064
-        Z: -0.08896106481552124
+        X: -0.7532466650009155
+        Y: 4.09855842590332
+        Z: -0.08855168521404266
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.785398006439209
+      Pitch: 1.5697963237762451
       Target Frame: <Fixed Frame>
-      Yaw: 0.7803980112075806
+      Yaw: 0.025398273020982742
     Saved: ~
 Window Geometry:
   Displays:
