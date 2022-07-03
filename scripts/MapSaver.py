@@ -75,8 +75,8 @@ def map_saver_service(req):
             rospy.loginfo("Node " + rospy.get_caller_id() + " has received the path")
 
             for i in range(len(path.poses)-1):
-                point1 = (round((path.poses[i].pose.position.y-y_ini)/resolution), round((path.poses[i].pose.position.x-x_ini)/resolution))
-                point2 = (round((path.poses[i+1].pose.position.y-y_ini)/resolution),round((path.poses[i+1].pose.position.x-x_ini)/resolution))
+                point1 = (int((path.poses[i].pose.position.y-y_ini)/resolution), int((path.poses[i].pose.position.x-x_ini)/resolution))
+                point2 = (int((path.poses[i+1].pose.position.y-y_ini)/resolution),int((path.poses[i+1].pose.position.x-x_ini)/resolution))
                 color = (0, 0, 255)
                 cv2.line(image, point1, point2, color, 1)
             rospy.loginfo("Node " + rospy.get_caller_id() + " has saved the map with trajectory")
