@@ -12,3 +12,6 @@ Rviz contiene il file per aprire il programma rviz con già preimpostati tutti i
 src contiene il nodo (broadcaster) per creare la mappa.
 scripts contiene i file per il salvataggio della mappa e della traiettoria.
 per far partire i nodi basta lanciare uno dei due programmi (gmapping.launch o amcl.launch)
+per far partire i nodi in python si deve richiamare il server map_saver_service.
+per creare la mappa abbiamo usato la bag 1.
+tf tree è formato da world map odom base_footprint base_link in serie e poi in parallelo laser_rear scan laser_front.
